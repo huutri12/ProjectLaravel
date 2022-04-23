@@ -66,5 +66,5 @@
     );
   });
 
-  CodeMirror.defineMIME("text/x-handlebars-template", "handlebars");
+  CodeMirror.defineMIME("text/x-handlebars-admin", "handlebars");
 });

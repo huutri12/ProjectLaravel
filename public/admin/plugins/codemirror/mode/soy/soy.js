@@ -258,7 +258,7 @@
           case "templ-ref":
             if (match = stream.match(/(\.?[a-zA-Z_][a-zA-Z_0-9]+)+/)) {
               state.soyState.pop();
-              // If the first character is '.', it can only be a local template.
+              // If the first character is '.', it can only be a local admin.
               if (match[0][0] == '.') {
                 return "variable-2"
               }
@@ -320,7 +320,7 @@
               state.soyState.push('param-type-record');
               return null;
             } else if (peekChar == "(") {
-              state.soyState.push('param-type-template');
+              state.soyState.push('param-type-admin');
               return null;
             } else if (peekChar == "<") {
               state.soyState.push('param-type-parameter');
@@ -356,7 +356,7 @@
             stream.next();
             return null;
 
-          case "param-type-template":
+          case "param-type-admin":
             if (stream.match(/[>]/)) {
               state.soyState.pop();
               state.soyState.push('param-type');
@@ -484,7 +484,7 @@
               if (selfClosed && !endTag) {
                 popcontext(state);
               }
-              if (state.tag == "/template" || state.tag == "/deltemplate") {
+              if (state.tag == "/admin" || state.tag == "/deltemplate") {
                 state.variables = prepend(null, 'ij');
                 state.indent = 0;
               } else {
@@ -511,7 +511,7 @@
             }
             return expression(stream, state);
 
-          case "template-call-expression":
+          case "admin-call-expression":
             if (stream.match(/^([\w-?]+)(?==)/)) {
               return "attribute";
             } else if (stream.eat('>')) {
@@ -610,7 +610,7 @@
           state.indent += 2 * config.indentUnit;
           return "keyword";
         } else if (match = stream.match('<{')) {
-          state.soyState.push("template-call-expression");
+          state.soyState.push("admin-call-expression");
           state.indent += 2 * config.indentUnit;
           state.soyState.push("tag");
           return "keyword";

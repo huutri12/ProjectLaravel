@@ -2683,7 +2683,7 @@
   let bodyClickListenerAdded = false;
   const clickHandlers = {};
   function bindClickHandler() {
-    let attr = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'data-swal-template';
+    let attr = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'data-swal-admin';
     clickHandlers[attr] = this;
 
     if (!bodyClickListenerAdded) {

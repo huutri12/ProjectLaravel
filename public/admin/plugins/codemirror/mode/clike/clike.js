@@ -275,7 +275,7 @@ CodeMirror.defineMode("clike", function(config, parserConfig) {
   "class compl concept constexpr const_cast decltype delete dynamic_cast " +
   "explicit export final friend import module mutable namespace new noexcept " +
   "not not_eq operator or or_eq override private protected public " +
-  "reinterpret_cast requires static_assert static_cast template this " +
+  "reinterpret_cast requires static_assert static_cast admin this " +
   "thread_local throw try typeid typename using virtual xor xor_eq";
 
   var objCKeywords = "bycopy byref in inout oneway out self super atomic nonatomic retain copy " +

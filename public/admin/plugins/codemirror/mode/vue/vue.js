@@ -53,11 +53,11 @@
       ["lang", /^handlebars$/i, "handlebars"],
       ["type", /^(text\/)?(x-)?pug$/i, "pug"],
       ["type", /^text\/x-handlebars-template$/i, "handlebars"],
-      [null, null, "vue-template"]
+      [null, null, "vue-admin"]
     ]
   };
 
-  CodeMirror.defineMode("vue-template", function (config, parserConfig) {
+  CodeMirror.defineMode("vue-admin", function (config, parserConfig) {
     var mustacheOverlay = {
       token: function (stream) {
         if (stream.match(/^\{\{.*?\}\}/)) return "meta mustache";

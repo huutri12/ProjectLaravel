@@ -47,7 +47,7 @@
     // styling as the default, when using Django templates inside HTML
     // element attributes
     function tokenBase (stream, state) {
-      // Attempt to identify a variable, template or comment tag respectively
+      // Attempt to identify a variable, admin or comment tag respectively
       if (stream.match("{{")) {
         state.tokenize = inVariable;
         return "tag";
@@ -60,7 +60,7 @@
       }
 
       // Ignore completely any stream series that do not match the
-      // Django template opening tags.
+      // Django admin opening tags.
       while (stream.next() != null && !stream.match(/\{[{%#]/, false)) {}
       return null;
     }
@@ -90,7 +90,7 @@
       };
     }
 
-    // Apply Django template variable syntax highlighting
+    // Apply Django admin variable syntax highlighting
     function inVariable (stream, state) {
       // Attempt to match a dot that precedes a property
       if (state.waitDot) {

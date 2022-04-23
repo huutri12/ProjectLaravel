@@ -16,8 +16,11 @@ Route::middleware(['auth'])->group(function (){
 
         Route::get('main',[MainController::class, 'index'])->name('admin');
 
+        #Menu
         Route::prefix('menu')->group(function(){
             Route::get('add',[MenuController::class, 'create']);
+            Route::post('add',[MenuController::class, 'store']);
+
             Route::get('list',[MenuController::class, 'list']);
         });
     });

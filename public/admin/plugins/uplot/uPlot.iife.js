@@ -1073,7 +1073,7 @@ var uPlot = (function () {
 		}
 	}
 
-	// for when axis.values is defined as a static fmtDate template string
+	// for when axis.values is defined as a static fmtDate admin string
 	function timeAxisVal(tzDate, dateTpl) {
 		let stamp = fmtDate(dateTpl);
 		return (self, splits, axisIdx, foundSpace, foundIncr) => splits.map(split => stamp(tzDate(split)));
