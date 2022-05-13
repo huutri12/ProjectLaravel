@@ -50,7 +50,6 @@ class ProductController extends Controller
         ]);
     }
 
-
     public function update(Request $request, Product $product)
     {
         $result = $this->productService->update($request, $product);

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\SliderController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Admin\MainController;
 use \App\Http\Controllers\Admin\Users\LoginController;
@@ -10,6 +11,12 @@ use \App\Http\Controllers\Admin\MenuController;
 Route::get('admin/users/login',[LoginController::class,'index'])->name('login');
 
 Route::post('admin/users/login/store',[LoginController::class,'store']);
+
+//Login facebook
+//Route::get('/login-facebook','LoginController@login_facebook');
+Route::get('/login-facebook',[LoginController::class,'login_facebook']);
+//Route::get('/admin/callback','LoginController@callback_facebook');
+Route::get('/admin/callback',[LoginController::class,'callback_facebook']);
 
 
 Route::middleware(['auth'])->group(function (){

@@ -35,7 +35,7 @@ $('#upload').change(function () {
         type: 'POST',
         dataType: 'JSON',
         data: form,
-        url: '/admin/upload/serv2ices',
+        url: '/admin/upload/services',
         success: function (results) {
             if (results.error === false) {
                 $('#image_show').html('<a href="' + results.url + '" target="_blank">' +
